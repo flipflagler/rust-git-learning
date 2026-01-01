@@ -1,9 +1,18 @@
 fn main() {
-    let s = String::from("rust");
-    takes_ownership(&s);
-    println!("{}", s);
-}
+    let mut vec =  Vec ::new();
+    vec.push(1);
+    vec.push(2);
+    vec.push(3);
+    vec.push(4);
+    print!("{:?}",even_filter(vec));
 
-fn takes_ownership(x: &String) {
-    println!("{}", x);
+}
+fn even_filter(vec: Vec<i32>)-> Vec<i32>{
+    let mut new_vec = Vec :: new();
+    for val in vec {
+        if val % 2 == 0{
+            new_vec.push(val);
+        }
+    }
+    new_vec
 }
