@@ -1,18 +1,15 @@
-fn main() {
-    let mut vec =  Vec ::new();
-    vec.push(1);
-    vec.push(2);
-    vec.push(3);
-    vec.push(4);
-    print!("{:?}",even_filter(vec));
+use std:: collections::HashMap;
 
-}
-fn even_filter(vec: Vec<i32>)-> Vec<i32>{
-    let mut new_vec = Vec :: new()ve ;
-    for val in vec {
-        if val % 2 == 0{
-            new_vec.push(val);
-        }
+fn group_values_by_key (vec: Vec<(String,i32)>) -> HashMap<String,i32>{
+    let mut hm = HashMap:: new();
+    for (key ,value) in vec{
+        hm.insert(key,value);
     }
-    new_vec
+    return hm;
+}
+
+fn main(){
+    let input_vec = vec![(String::from("harsh"),20),(String::from("raman"),30)];
+    let hm =  group_values_by_key(input_vec);
+    print!("{:?}",hm);
 }
