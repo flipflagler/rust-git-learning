@@ -8,7 +8,7 @@ fn main() {
 
 }
 fn even_filter(vec: Vec<i32>)-> Vec<i32>{
-    let mut new_vec = Vec :: new();
+    let mut new_vec = Vec :: new()ve ;
     for val in vec {
         if val % 2 == 0{
             new_vec.push(val);
