@@ -1,22 +1,22 @@
-use std::collections::HashMap;
-
-fn main() {
-    // Create a HashMap and populate it with some key-value pairs
-    let mut scores = HashMap::new();
-    scores.insert("Alice", 50);
-    scores.insert("Bob", 40);
-    scores.insert("Charlie", 30);
-
-    // Example 1: Iterating over references to key-value pairs
-    println!("Iterating over key-value pairs:");
-    for (key, value) in scores.iter() {
-        println!("{}: {}", key, value);
+trait Summary {
+    fn summary(&self)-> String {
+        return String :: from ("hi there");
     }
-
-    // Example 2: Iterating over mutable references to key-value pairs
-    println!("\nIterating over mutable key-value pairs:");
-    for (key, value) in scores.iter_mut() {
-        *value += 10; // Increment each score by 10
-        println!("{}: {}", key, value);
+}
+struct User {
+    name :String,
+    age :u32,
+}
+impl Summary for User{
+    fn summary(&self)-> String {
+        print!("hi");
+        return format!("thename is {},and the age is {}",self.name,self.age);
     }
+}
+fn main(){
+    let user = User{
+        name : String::from("harsh"),
+        age:21,
+    };
+    println!("{}",user.summary());
 }
